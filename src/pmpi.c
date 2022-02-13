@@ -80,11 +80,17 @@ void print_mpi_event_data(int total_size, int *result_matrix)
 
     for(i = 0; i < total_size; i++)
     {
-        fprintf(fp, "%d ", i);
         int j;
 		for(j = 0; j < total_size; j++)
         {
- 	    	fprintf(fp, " %d", result_matrix[i * total_size + j]);
+            if(j == 0)
+            {
+ 	    	    fprintf(fp, "%d", result_matrix[i * total_size + j]);
+            }
+            else
+            {
+                fprintf(fp, " %d", result_matrix[i * total_size + j]);
+            }
 		}
         fprintf(fp, "\n");
     }
