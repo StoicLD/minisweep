@@ -1,0 +1,4 @@
+env BUILD=Release NM_VALUE=16 ../minisweep/scripts/cmake_cray_xk7.sh
+make VERBOSE=1
+srun -N4 -n64 -popteron --pty /bin/bash
+prun ./sweep --ncell_x 64 --ncell_y 64 --ncell_z 64 --nproc_x 8 --nproc_y 8

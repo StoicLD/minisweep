@@ -21,6 +21,6 @@ int MPI_Isend(const void *buf, int count, MPI_Datatype datatype, int dest,
 
 int MPI_Finalize(void)
 {
-    printf("use my mpi finialize\n")
+    printf("use my mpi finialize\n");
     return PMPI_Finalize();
 }
